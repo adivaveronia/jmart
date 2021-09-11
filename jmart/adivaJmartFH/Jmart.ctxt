@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Jmart
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=int\ getPromo()
+comment3.params=
+comment3.target=java.lang.String\ getCustomer()
+comment4.params=before\ after
+comment4.target=float\ getDiscountPercentage(int,\ int)
+numComments=5
