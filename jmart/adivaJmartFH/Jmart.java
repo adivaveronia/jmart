@@ -2,25 +2,58 @@ package adivaJmartFH;
 
 public class Jmart
 {
-    public static void main (String[] args){
-        System.out.println("test");
-    }
-    public int getPromo () {
+    public int getPromo() {
         return 0;
     }
-    public String getCustomer () {
+    
+    public String getCustomer() {
         return "oop";
     }
-    public float getDiscountPercentage(int before, int after){
-        float discount = 0;
-        if (before > after) {
-            discount = before - after;
-        }
-        else if (before <= after) {
-            discount = 0;
-        }
-        return discount;
+    
+    public static float getDiscountPercentage(int before, int after) {
+       
+        return before > after ? ((float)(before - after) / before) * 100 : 0.0f;
+    
     }
+    
+    public static int getDiscountedPrice(int price, float discountPercentage) {
+        
+        int cutPrice = 0;
+        if(discountPercentage >= 100.0f){
+            cutPrice = 0;
+        }
+        else {
+            cutPrice = price - (int)((discountPercentage * price)/100);
+        }   
+        
+        return cutPrice;
+    }
+    
+    public static int getOriginalPrice(int discountedPrice, float discountPercentage) {
+        // discounted price bisa dari fungsi getDiscountedPrice atau input before
+        return (int)((100 * discountedPrice)/(float)(100 - discountPercentage));
+    }
+    
+    public static float getComissionMultiplier() {
+        return 0.05f;
+    }
+    
+    public static int getAdjustedPrice(int price) {
+        return price + (int)(price * getComissionMultiplier());
+    }
+    
+    public static int getAdminFee(int price) {
+        return (int)(price * getComissionMultiplier());
+    }
+
+    public static void main(String[] args) {
+        /*System.out.println(getDiscountPercentage(5000, 4000)); //10.0f
+        System.out.println(getDiscountedPrice(5000,20.0f)); //900
+        System.out.println(getOriginalPrice(1000,0.0f)); //1000
+        System.out.println(getAdjustedPrice(500)); //525
+        System.out.println(getAdminFee(500)); //25*/
+    }
+    
 }
     
     
