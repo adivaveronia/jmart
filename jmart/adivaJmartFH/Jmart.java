@@ -48,9 +48,9 @@ public class Jmart
     }
 
     // dari cs modul 2
-    public Product create() {
+    /*public Product create() {
         Product object = new Product();
-    }
+    }*/
     
     public static void main(String[] args) {
         /*System.out.println(getDiscountPercentage(5000, 4000)); //10.0f

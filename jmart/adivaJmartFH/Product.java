@@ -18,6 +18,6 @@ public class Product
         pricetag = pricetag;
         category = category;
         id = idCounter;
-        rating = new ProductRating(rating);
+        //rating = new ProductRating(rating);
     }
 }
