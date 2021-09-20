@@ -2,7 +2,7 @@ package adivaJmartFH;
 
 public class Jmart
 {
-    // dari cs modul 1
+    /* dari cs modul 1
     public int getPromo() {
         return 0;
     }
@@ -45,19 +45,23 @@ public class Jmart
     
     public static int getAdminFee(int price) {
         return (int)(price * getComissionMultiplier());
-    }
+    }*/
 
     // dari cs modul 2
     /*public Product create() {
         Product object = new Product();
     }*/
-    
+    public static Product createProduct() {
+        return null;
+    }
+    public static Coupon createCoupon() {
+        return null;
+    }
+    public static ShipmentDuration createShipmentDuration() {
+        return null;
+    }
     public static void main(String[] args) {
-        /*System.out.println(getDiscountPercentage(5000, 4000)); //10.0f
-        System.out.println(getDiscountedPrice(5000,20.0f)); //900
-        System.out.println(getOriginalPrice(1000,0.0f)); //1000
-        System.out.println(getAdjustedPrice(500)); //525
-        System.out.println(getAdminFee(500)); //25*/
+        
     }
  
 }

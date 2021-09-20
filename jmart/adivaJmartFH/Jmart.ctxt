@@ -1,21 +1,12 @@
 #BlueJ class context
 comment0.target=Jmart
 comment1.params=
-comment1.target=int\ getPromo()
+comment1.target=Product\ createProduct()
+comment1.text=public\ Product\ create()\ {\r\n\ \ \ \ \ \ \ \ Product\ object\ \=\ new\ Product();\r\n}
 comment2.params=
-comment2.target=java.lang.String\ getCustomer()
-comment3.params=before\ after
-comment3.target=float\ getDiscountPercentage(int,\ int)
-comment4.params=price\ discountPercentage
-comment4.target=int\ getDiscountedPrice(int,\ float)
-comment5.params=discountedPrice\ discountPercentage
-comment5.target=int\ getOriginalPrice(int,\ float)
-comment6.params=
-comment6.target=float\ getComissionMultiplier()
-comment7.params=price
-comment7.target=int\ getAdjustedPrice(int)
-comment8.params=price
-comment8.target=int\ getAdminFee(int)
-comment9.params=args
-comment9.target=void\ main(java.lang.String[])
-numComments=10
+comment2.target=Coupon\ createCoupon()
+comment3.params=
+comment3.target=ShipmentDuration\ createShipmentDuration()
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
