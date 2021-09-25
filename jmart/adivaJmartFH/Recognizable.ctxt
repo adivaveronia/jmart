@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Recognizable
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Recognizable\ here.\r\n\r\n\ @author\ (Adiva\ Veronia)\r\n\ @version\ (25/09/2021)\r\n
+comment1.params=id
+comment1.target=Recognizable(int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Recognizable\r\n
+comment2.params=object
+comment2.target=boolean\ equals(java.lang.Object)
+comment3.params=idObject
+comment3.target=boolean\ equals(Recognizable)
+numComments=4

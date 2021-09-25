@@ -7,8 +7,12 @@ package adivaJmartFH;
  * @author (Adiva veronia)
  * @version (20/09/2021)
  */
-public class Coupon
-{
+public class Coupon extends Recognizable {
+    public static enum Type
+    {
+        DISCOUNT,
+        REBATE
+    }
     // instance variables - replace the example below with your own
     public String name;
     public int code;
@@ -21,12 +25,13 @@ public class Coupon
      * Constructor for objects of class Coupon
      */
     public Coupon(int code, Type type, double cut, double minimum, String name) {
-        name = name;
-        code = code;
-        cut = cut;
-        type = type;
-        minimum = minimum;
-        used = false; 
+        super(id);
+        this.name = name;
+        this.code = code;
+        this.cut = cut;
+        this.type = type; 
+        this.minimum = minimum; 
+        this.used = false; 
     }
 
     public boolean isUsed() {
@@ -34,7 +39,7 @@ public class Coupon
     }
     
     // itu nama kelas PriceTag nya otomatis ke ubah jadi Pricetag gak tau kenapa
-    public boolean canApply(Pricetag priceTag) {
+    public boolean canApply(PriceTag priceTag) {
         
         if (priceTag.getAdjustedPrice() >= minimum && used == false) {
             return true;
@@ -44,9 +49,9 @@ public class Coupon
         }
     }
     
-    /*public double apply(Pricetag priceTag) {
+    public double apply(PriceTag priceTag) {
         used = true;
-        priceTag = (double)(priceTag.getAdjustedPrice() - cut);
-        return priceTag;
-    }*/
+        return (double)priceTag.getAdjustedPrice() - cut;
+        
+    }
 }

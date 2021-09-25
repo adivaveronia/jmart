@@ -1,12 +1,15 @@
 #BlueJ class context
 comment0.target=Jmart
 comment1.params=
-comment1.target=Product\ createProduct()
-comment1.text=public\ Product\ create()\ {\r\n\ \ \ \ \ \ \ \ Product\ object\ \=\ new\ Product();\r\n}
+comment1.target=Jmart()
 comment2.params=
-comment2.target=Coupon\ createCoupon()
+comment2.target=Product\ create()
 comment3.params=
-comment3.target=ShipmentDuration\ createShipmentDuration()
-comment4.params=args
-comment4.target=void\ main(java.lang.String[])
-numComments=5
+comment3.target=Product\ createProduct()
+comment4.params=
+comment4.target=Coupon\ createCoupon()
+comment5.params=
+comment5.target=ShipmentDuration\ createShipmentDuration()
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

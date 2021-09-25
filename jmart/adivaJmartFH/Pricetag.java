@@ -7,44 +7,44 @@ package adivaJmartFH;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Pricetag
+public class PriceTag
 {
-    public double COMISSION_MULTIPLIER = 0.05;
-    public double BOTTOM_PRICE = 20000.0;
-    public double BOTTOM_FEE = 1000.0;
+    public static final double COMISSION_MULTIPLIER = 0.05;
+    public static final double BOTTOM_PRICE = 20000.0;
+    public static final double BOTTOM_FEE = 1000.0;
     public double discount;
     public double price;
 
-    public void PriceTag(double price) {
-        price = price;
-        price = 0.0;
+    public PriceTag(double price) {
+        this.price = price;
+        this.price = 0.0;
     }
     
-    public Pricetag(double price, double discount) {
-        price = price;
-        discount = discount;
+    public PriceTag(double price, double discount) {
+        this.price = price;
+        this.discount = discount;
     }
     
     public double getAdjustedPrice() {
-        return getDiscountPrice();
+        return getDiscountPrice() + getAdminFee();
     }
     
     public double getAdminFee() {
-        /*if (discount != BOTTOM_PRICE) {
-            BOTTOM_FEE;
-        }*/
-        return BOTTOM_FEE;
+        if (getDiscountPrice() != BOTTOM_PRICE) {
+            return BOTTOM_FEE;
+        }
+        else {
+            return getDiscountPrice() * PriceTag.COMISSION_MULTIPLIER;
+        }
     }
     
     private double getDiscountPrice () {
-        if (discount > 100.0) {
-            discount = 100.0;
+        if (discount >= 100.0) {
+            return price = 0.0;
         }
-        else if (discount == 100.0) {
-            discount = 0.0;
+        else {
+            return price - ((discount * price)/100);
         }
-        return discount;
-        //return field;
     }
         
 }

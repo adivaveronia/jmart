@@ -6,7 +6,7 @@ public class ProductRating
     private long count;
     
     public ProductRating() {
-        total = 0;
+        this.total = 0;
     }
     
     public void insert (int rating) {
@@ -19,10 +19,10 @@ public class ProductRating
     }
     
     public long getCount() {
-        return count;
+        return this.count;
     }
     
     public long getTotal() {
-        return total;
+        return this.total;
     }
 }

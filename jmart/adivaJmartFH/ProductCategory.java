@@ -8,8 +8,7 @@ public enum ProductCategory {
     PETCARE, ART_CRAFT, CARPENTRY, MISCELLANEOUS, 
     PROPERTY, TRAVEL, WEDDING;
     
-    ProductCategory() {
-        
-    }
+    /*ProductCategory() {  
+    }*/
 }
 
