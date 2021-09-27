@@ -14,9 +14,9 @@ public class Jmart
     public static Coupon createCoupon() {
         return null;
     }
-    public static ShipmentDuration createShipmentDuration() {
+    /*public static ShipmentDuration createShipmentDuration() {
         return null;
-    }
+    }*/
     public static void main(String[] args) {
         
     }
