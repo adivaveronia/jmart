@@ -10,5 +10,4 @@ comment4.params=
 comment4.target=Coupon\ createCoupon()
 comment5.params=args
 comment5.target=void\ main(java.lang.String[])
-comment5.text=public\ static\ ShipmentDuration\ createShipmentDuration()\ {\r\n\ \ \ \ \ \ \ \ return\ null;\r\n}
 numComments=6

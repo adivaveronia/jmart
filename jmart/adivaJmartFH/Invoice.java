@@ -1,6 +1,7 @@
 package adivaJmartFH;
 
 
+import java.util.Date;
 /**
  * Write a description of class Invoice here.
  *
@@ -26,7 +27,7 @@ public abstract class Invoice extends Recognizable implements FileParser
         GOOD
     }
     
-    public String date = "text";
+    public Date date;
     public int buyerId;
     public int productId;
     public Rating rating = Rating.NONE;
@@ -36,6 +37,7 @@ public abstract class Invoice extends Recognizable implements FileParser
         super(id);
         this.buyerId = buyerId;
         this.productId = productId;
+        this.date = new java.util.Date();
     }
     
     @Override
