@@ -1,6 +1,7 @@
 package adivaJmartFH;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Calendar;
 
 public class Complaint extends Recognizable implements FileParser
 {
@@ -21,6 +22,12 @@ public class Complaint extends Recognizable implements FileParser
     @Override
     public boolean read(String content){
         return false;
+    }
+    
+    public String toString() {
+        SimpleDateFormat complaintDate = new SimpleDateFormat("dd/MM/yyyy");
+        String complaintDateText = complaintDate.format(date);
+        return "Complaint{date=" + complaintDate +", desc='" + desc + "'}";
     }
 
 }

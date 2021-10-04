@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class Store extends Recognizable implements FileParser
 {
     public static final String REGEX_PHONE ="[0-9]{9,12}";
-    public static final String REGEX_NAME = "^[A-Z][A-Za-z]{4,20}";
+    public static final String REGEX_NAME = "^[A-Za-z]{1,8}$";
     public String name;
     public String address;
     public String phoneNumber;
@@ -30,10 +30,10 @@ public class Store extends Recognizable implements FileParser
     public boolean read(String content){
         return false;
     }
-    public String toString() {
+    /*public String toString() {
         return "name: PT Madju Merdeka\naddress: Jl. Kukusan\nphoneNumber: 628777xxxx";
         
-    }
+    }*/
     public boolean validate(){
         boolean found =  Pattern.matches(REGEX_PHONE, name) && Pattern.matches(REGEX_NAME, phoneNumber);
         return found ? true : false;

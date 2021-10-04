@@ -1,7 +1,8 @@
 package adivaJmartFH;
 
-
 import java.util.Date;
+import java.util.ArrayList;
+
 /**
  * Write a description of class Invoice here.
  *
@@ -46,4 +47,11 @@ public abstract class Invoice extends Recognizable implements FileParser
     }
     
     public abstract double getTotalPay();
+    
+    public class Record {
+        public Status status;
+        public Date date;
+        public String message;
+        ArrayList<Record> history = new ArrayList<Record>();
+    }
 }

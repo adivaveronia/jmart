@@ -1,7 +1,11 @@
 package adivaJmartFH;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Account extends Recognizable implements FileParser
 {
+    public static final String REGEX_EMAIL ="^[^\\.][A-Za-z0-9]+@";
+    public static final String REGEX_PASSWORD = "[A-Za-z]{1,8}[^ ]$";
     public String name;
     public String email;
     public String password;
@@ -23,8 +27,9 @@ public class Account extends Recognizable implements FileParser
         return false;
     }
     
-    public String toString() {
-        return "name: Ramadhan\nemail: ramadhanganteng@gmail.com\npassword: gu3G4ntEnG";
+    public boolean validate(){
+        boolean found =  Pattern.matches(REGEX_EMAIL, email) && Pattern.matches(REGEX_PASSWORD, password);
+        return found ? true : false;
     }
     
 }

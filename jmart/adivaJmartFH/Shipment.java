@@ -31,8 +31,27 @@ public class Shipment implements FileParser
         
         public String getEstimatedArrival(Date reference){
             Calendar day = Calendar.getInstance();
-            day.add(Calendar.DATE, 1);
-            return ESTIMATION_FORMAT.format(day.getTime()); 
+            if(bit == (1<<0)) {
+                return ESTIMATION_FORMAT.format(reference.getTime());
+            }
+            else if(bit == (1<<1)) {
+                return ESTIMATION_FORMAT.format(reference.getTime());
+            }
+            else if(bit == (1<<2)) {
+                day.setTime(reference);
+                day.add(Calendar.DATE, 1);
+                return ESTIMATION_FORMAT.format(day.getTime());
+            }
+            else if(bit == (1<<3)) {
+                day.setTime(reference);
+                day.add(Calendar.DATE, 2);
+                return ESTIMATION_FORMAT.format(day.getTime());
+            }
+            else {
+                day.setTime(reference);
+                day.add(Calendar.DATE, 5);
+                return ESTIMATION_FORMAT.format(day.getTime());
+            }
         }
     }
     
