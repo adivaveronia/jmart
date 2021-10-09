@@ -41,7 +41,7 @@ public class Coupon extends Recognizable {
     // itu nama kelas PriceTag nya otomatis ke ubah jadi Pricetag gak tau kenapa
     public boolean canApply(PriceTag priceTag) {
         
-        if (priceTag.getAdjustedPrice() >= minimum && used == false) {
+        if (priceTag.getAdjustedPrice() >= minimum && !used) {
             return true;
         }
         else {

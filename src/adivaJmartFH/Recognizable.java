@@ -7,8 +7,7 @@ package adivaJmartFH;
  * @author (Adiva Veronia)
  * @version (25/09/2021)
  */
-public class Recognizable
-{
+public class Recognizable implements Comparable<Recognizable> {
     public static int id;
     /**
      * Constructor for objects of class Recognizable
@@ -16,6 +15,14 @@ public class Recognizable
     protected Recognizable(int id)
     {
         this.id = id;
+    }
+
+    public static int setClosingId(Class<Recognizable> clazz, int id) {
+        return 0;
+    }
+
+    public static int getClosingId(Class<Recognizable> clazz) {
+        return 0;
     }
 
     public boolean equals(Object object) {
@@ -27,7 +34,13 @@ public class Recognizable
         }
         return true;
     }
+
     public boolean equals(Recognizable idObject) {
          return idObject.id == id? true : false;
+    }
+
+    @Override
+    public int compareTo(Recognizable obj) {
+        return (this.id/id);
     }
 }
