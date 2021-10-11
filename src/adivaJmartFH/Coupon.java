@@ -1,6 +1,5 @@
 package adivaJmartFH;
 
-
 /**
  * Write a description of class Coupon here.
  *
@@ -25,7 +24,6 @@ public class Coupon extends Recognizable {
      * Constructor for objects of class Coupon
      */
     public Coupon(int code, Type type, double cut, double minimum, String name) {
-        super(id);
         this.name = name;
         this.code = code;
         this.cut = cut;
@@ -41,7 +39,7 @@ public class Coupon extends Recognizable {
     // itu nama kelas PriceTag nya otomatis ke ubah jadi Pricetag gak tau kenapa
     public boolean canApply(PriceTag priceTag) {
         
-        if (priceTag.getAdjustedPrice() >= minimum && !used) {
+        if (priceTag.getAdjustedPrice(minimum, cut) >= minimum && !used) {
             return true;
         }
         else {
@@ -51,7 +49,7 @@ public class Coupon extends Recognizable {
     
     public double apply(PriceTag priceTag) {
         used = true;
-        return (double)priceTag.getAdjustedPrice() - cut;
+        return (double)priceTag.getAdjustedPrice(minimum, cut) - cut;
         
     }
 }

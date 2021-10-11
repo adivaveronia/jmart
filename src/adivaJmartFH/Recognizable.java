@@ -12,9 +12,9 @@ public class Recognizable implements Comparable<Recognizable> {
     /**
      * Constructor for objects of class Recognizable
      */
-    protected Recognizable(int id)
+    protected Recognizable()
     {
-        this.id = id;
+        this.id = 421;
     }
 
     public static int setClosingId(Class<Recognizable> clazz, int id) {

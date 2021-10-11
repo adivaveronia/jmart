@@ -1,10 +1,9 @@
 package adivaJmartFH;
 
-
 /**
  * Write a description of class Pricetag here.
  *
- * @author (your name)
+ * @author (Adiva Veronia)
  * @version (a version number or a date)
  */
 public class PriceTag
@@ -12,33 +11,21 @@ public class PriceTag
     public static final double COMISSION_MULTIPLIER = 0.05;
     public static final double BOTTOM_PRICE = 20000.0;
     public static final double BOTTOM_FEE = 1000.0;
-    public double discount;
-    public double price;
 
-    public PriceTag(double price) {
-        this.price = price;
-        this.price = 0.0;
+    public double getAdjustedPrice(double price, double discount) {
+        return getDiscountPrice(price, discount) + getAdminFee(price, discount);
     }
     
-    public PriceTag(double price, double discount) {
-        this.price = price;
-        this.discount = discount;
-    }
-    
-    public double getAdjustedPrice() {
-        return getDiscountPrice() + getAdminFee();
-    }
-    
-    public double getAdminFee() {
-        if (getDiscountPrice() != BOTTOM_PRICE) {
+    public double getAdminFee(double price, double discount) {
+        if (getDiscountPrice(price, discount) != BOTTOM_PRICE) {
             return BOTTOM_FEE;
         }
         else {
-            return getDiscountPrice() * PriceTag.COMISSION_MULTIPLIER;
+            return getDiscountPrice(price, discount) * PriceTag.COMISSION_MULTIPLIER;
         }
     }
     
-    private double getDiscountPrice () {
+    private double getDiscountPrice (double price, double discount) {
         if (discount >= 100.0) {
             return price = 0.0;
         }

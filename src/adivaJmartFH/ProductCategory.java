@@ -7,8 +7,6 @@ public enum ProductCategory {
     FNB, STATIONERY, SPORTS, AUTOMOTIVE, 
     PETCARE, ART_CRAFT, CARPENTRY, MISCELLANEOUS, 
     PROPERTY, TRAVEL, WEDDING;
-    
-    /*ProductCategory() {  
-    }*/
+
 }
 
