@@ -6,7 +6,7 @@ package adivaJmartFH;
  * @author (Adiva veronia)
  * @version (20/09/2021)
  */
-public class Coupon extends Recognizable {
+public class Coupon extends Serializable {
     public static enum Type
     {
         DISCOUNT,

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class Invoice extends Recognizable
+public abstract class Invoice extends Serializable
 {
     public static enum Status{
         WAITING_CONFIRMATION,
@@ -31,7 +31,7 @@ public abstract class Invoice extends Recognizable
     public Date date;
     public int buyerId;
     public int productId;
-    ArrayList<Record> history = new ArrayList<Record>();
+    public ArrayList<Record> history = new ArrayList<Record>();
     public Rating rating = Rating.NONE;
     public Status status = Status.WAITING_CONFIRMATION;
     

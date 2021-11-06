@@ -14,6 +14,18 @@ public class Jmart
         public List<String> listOfStates;
     }
 
+    public static List<Product> filterByCategory(List<Product> list, ProductCategory category){
+        return null;
+    }
+
+    public static List<Product> filterByPrice(List<Product> list, double minPrice, double maxPrice){
+        return null;
+    }
+
+    public static List<Product> read (String filePath){
+        return null;
+    }
+
     public static void main(String[] args) {
         String filepath = "C:/Users/adiva/Documents/jmart/city.json";
         Gson gson = new Gson();
