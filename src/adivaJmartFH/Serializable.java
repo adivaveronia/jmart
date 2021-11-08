@@ -9,31 +9,25 @@ import java.util.HashMap;
  * @version (25/09/2021)
  */
 public class Serializable implements Comparable<Serializable> {
-    public final int id = 0;
+    public final int id;
     // menggunakan HashMap
-    static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
 
     protected Serializable()
     {
+        Integer counter = mapCounter.get(getClass());
+        counter = counter == null? 0:counter+1;
+        this.id = counter;
         mapCounter.put(getClass(), id);
     }
 
     public static Integer setClosingId(Class<Serializable> clazz, int id) {
-        if(clazz.isAssignableFrom(Serializable.class)){
-            return 0;
-        }else{
-            return 1;
-        }
-        //mapCounter.replace(Key ,id);
+        mapCounter.replace(clazz ,id);
+        return 0;
     }
 
     public static Integer getClosingId(Class<Serializable> clazz) {
-        if(clazz.isAssignableFrom(Serializable.class)){
-            return 0;
-        }else{
-            return 1;
-        }
-        //return mapCounter.get();
+        return mapCounter.get(clazz);
     }
 
     public boolean equals(Object object) {
