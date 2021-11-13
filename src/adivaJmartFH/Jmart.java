@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import com.google.gson.*;
 
@@ -21,7 +22,16 @@ public class Jmart
         return null;
     }
     public static List<Product> filterByPrice(List<Product> list, double minPrice, double maxPrice){
+        List<Product> tempList = new ArrayList<>();
+        Iterator<Product> iterator = list.iterator();
+        /*if(minPrice != 0.0){
+            for(Product eachElement: list){
+                if(eachElement.product != minPrice){
 
+                }
+            }
+            list.
+        }*/
         return null;
     }
 
