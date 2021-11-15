@@ -18,7 +18,8 @@ public abstract class Invoice extends Serializable
         ON_DELIVERY,
         COMPLAINT,
         FINISHED,
-        FAILED
+        FAILED,
+        DELIVERED
     }
     
     public static enum Rating{
@@ -27,26 +28,20 @@ public abstract class Invoice extends Serializable
         NEUTRAL,
         GOOD
     }
-    
-    public Date date;
+
     public int buyerId;
+    public int complaintId = -1;
+    public Date date;
     public int productId;
-    public ArrayList<Record> history = new ArrayList<Record>();
     public Rating rating = Rating.NONE;
-    public Status status = Status.WAITING_CONFIRMATION;
+    //public Status status = Status.WAITING_CONFIRMATION;
     
-    protected Invoice(int id, int buyerId, int productId){
+    protected Invoice(int buyerId, int productId){
         this.buyerId = buyerId;
         this.productId = productId;
         this.date = new java.util.Date();
     }
     
-    public abstract double getTotalPay();
-    
-    public class Record {
-        public Status status;
-        public Date date;
-        public String message;
+    public abstract double getTotalPay(Product product);
 
-    }
 }

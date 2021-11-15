@@ -10,7 +10,19 @@ import com.google.gson.*;
 
 public class Jmart
 {
-    public static List<Product> filterByAccountId(List<Product> list, int accountId, int page, int pageSize){
+    public static long DELIVERED_LIMIT_MS = 0;
+    public static long ON_DELIVERED_LIMIT_MS = 1;
+    public static long ON_PROGRESS_LIMIT_MS = 2;
+    public static long WAITING_CONF_LIMIT_MS = 3;
+
+    public static void main(String[] args){
+    }
+
+    public static boolean paymentTimekeeper(Payment payment){
+        return false;
+    }
+
+    /*public static List<Product> filterByAccountId(List<Product> list, int accountId, int page, int pageSize){
         return null;
     }
 
@@ -32,10 +44,10 @@ public class Jmart
             }
             list.
         }*/
-        return null;
-    }
+      //  return null;
+    //}
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         try
         {
             List<Product> list = read("C:/Users/adiva/Documents/jmart/randomProductList.json");
@@ -68,7 +80,7 @@ public class Jmart
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 
 }
     

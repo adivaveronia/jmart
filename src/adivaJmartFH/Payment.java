@@ -1,6 +1,7 @@
 package adivaJmartFH;
 
-
+import java.util.Date;
+import java.util.ArrayList;
 /**
  * Write a description of class Payment here.
  *
@@ -9,28 +10,39 @@ package adivaJmartFH;
  */
 public class Payment extends Invoice
 {
+    public ArrayList<Record> history = new ArrayList<Record>();
     public int productCount;
     public Shipment shipment;
     
-    Payment(int id, int buyerId, int productId, int productCount, Shipment shipment){
-        super(id, buyerId, productId);
+    Payment(int buyerId, int productId, int productCount, Shipment shipment){
+        super(buyerId, productId);
         this.productCount = productCount;
         this.shipment = shipment;
     }
     
-    public boolean validate(){
+    /*public boolean validate(){
         return false;
-    }
+    }*/
     
-    public Invoice perform(){
+    /*public Invoice perform(){
         return null;
-    }
+    }*/
     
-    public double getTotalPay(){
+    public double getTotalPay(Product product){
         return 0;
     }
     
-    public Object write(){
+    /*public Object write(){
         return null;
+    }*/
+
+    public class Record {
+        public Status status;
+        public Date date;
+        public String message;
+
+        public Record (Status status, String message){
+            this.date = new java.util.Date();
+        }
     }
 }
