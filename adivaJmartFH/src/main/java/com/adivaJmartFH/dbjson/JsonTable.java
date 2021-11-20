@@ -1,12 +1,12 @@
-package com.adivaJmartFH;
+package com.adivaJmartFH.dbjson;
+
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.Collections;
 import java.util.Vector;
-
-import com.google.gson.*;
-import com.google.gson.stream.JsonReader;
 
 /**
  * List with functionality to be written as / loaded from a JSON Array

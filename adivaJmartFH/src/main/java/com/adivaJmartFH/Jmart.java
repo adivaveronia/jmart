@@ -6,22 +6,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import com.adivaJmartFH.dbjson.JsonDBEngine;
 import com.google.gson.*;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class Jmart
-{
+
+public class Jmart {
     public static long DELIVERED_LIMIT_MS = 0;
     public static long ON_DELIVERED_LIMIT_MS = 1;
     public static long ON_PROGRESS_LIMIT_MS = 2;
     public static long WAITING_CONF_LIMIT_MS = 3;
 
     public static void main(String[] args){
-        SpringApplication.run(Jmart.class, args);
+
+        /*JsonDBEngine.Run(Application.class);
+        SpringApplication.run(Application.class, args);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));*/
     }
 
     public static boolean paymentTimekeeper(Payment payment){

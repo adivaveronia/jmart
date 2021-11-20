@@ -1,11 +1,12 @@
 package com.adivaJmartFH;
 
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Collections;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Algorithm<T> {
     private Algorithm() {
@@ -312,14 +313,49 @@ public class Algorithm<T> {
     }
 
     public static <T>List<T> paginate (T[] array, int page, int pageSize, Predicate<T> pred){
-        return null;
+        return Arrays.stream(array).filter(pred::equals).skip(pageSize*page).limit(pageSize).collect(Collectors.toList());
     }
 
     public static <T>List<T> paginate (Iterable<T> iterable, int page, int pageSize, Predicate<T> pred){
-        return null;
+        List<T> list = new ArrayList<T>();
+        int counter = 0, counterPrint = 0;
+        int size = pageSize * page;
+        for (T each : iterable){
+            if (counter < size && pred.equals(each)){
+                counter++;
+                continue;
+            }
+            if (counterPrint < pageSize && pred.equals(each)){
+                list.add(each);
+                counterPrint++;
+            }else{
+                break;
+            }
+        }
+        return list;
     }
 
     public static <T>List<T> paginate (Iterator<T> iterator, int page, int pageSize, Predicate<T> pred){
-        return null;
+
+        int iteration = 0;
+        int occurences = 0;
+        int startingIdx = page * pageSize;
+        List<T> pageList = new ArrayList<>(pageSize);
+
+        List<T> array = new ArrayList<T>();
+
+        iterator.forEachRemaining(array::add);
+
+        for (; iteration < array.size() && occurences < startingIdx; ++iteration) {
+            if (pred.equals(array.get(iteration))) {
+                ++occurences;
+            }
+        }
+        for (int i = 0; i < array.size() && pageList.size() < pageSize; ++i) {
+            if (pred.equals(array.get(iteration))) {
+                pageList.add(array.get(iteration));
+            }
+        }
+        return pageList;
     }
 }

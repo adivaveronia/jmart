@@ -1,4 +1,4 @@
-package com.adivaJmartFH;
+package com.adivaJmartFH.dbjson;
 
 import java.util.HashMap;
 

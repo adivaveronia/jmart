@@ -1,5 +1,5 @@
 package com.adivaJmartFH;
 
 public interface Predicate<T> {
-    public boolean predicate(T ob);
+    public boolean predicate(T arg);
 }
