@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d7a9248-929a-438e-b650-13255641a42a" name="Changes" comment="Modul 8 - Adiva Veronia - CS">
-      <change afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/CouponController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/BasicGetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/BasicGetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/PaymentController.java" afterDir="false" />
-    </list>
+    <list default="true" id="1d7a9248-929a-438e-b650-13255641a42a" name="Changes" comment="Modul 8 - Adiva Veronia - Posttest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +98,7 @@
       <workItem from="1637329873732" duration="5795000" />
       <workItem from="1637368984266" duration="2263000" />
       <workItem from="1637371546038" duration="10419000" />
-      <workItem from="1637580828632" duration="8096000" />
+      <workItem from="1637580828632" duration="8452000" />
     </task>
     <task id="LOCAL-00001" summary="Modul 8 - Adiva Veronia - CS">
       <created>1637381641104</created>
@@ -115,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637381641104</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modul 8 - Adiva Veronia - Posttest">
+      <created>1637589346070</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637589346070</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modul 8 - Adiva Veronia - CS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 8 - Adiva Veronia - CS" />
+    <MESSAGE value="Modul 8 - Adiva Veronia - Posttest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 8 - Adiva Veronia - Posttest" />
   </component>
 </project>
