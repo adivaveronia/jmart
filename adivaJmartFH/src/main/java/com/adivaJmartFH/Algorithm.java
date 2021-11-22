@@ -74,62 +74,32 @@ public class Algorithm<T> {
 
     // Method Overloading count
     public static <T> int count(T[] array, T value) {
-        return array.length;
+        final Iterator<T> var = Arrays.stream(array).iterator();
+        return count(var, value);
     }
 
     public static <T> int count(Iterable<T> iterable, T value) {
-        int count = 0;
-        for(Object i : iterable){
-            count++;
-        }
-        return count;
+        final Iterator<T> var = iterable.iterator();
+        return count(var, value);
     }
 
     public static <T> int count(Iterator<T> iterator, T value) {
-        int count = 0;
-        while(iterator.hasNext()){
-            count++;
-        }
-        return count;
+        final Predicate<T> var = value::equals;
+        return count(iterator,var);
     }
 
     public static <T> int count(T[] array, Predicate<T> pred) {
-        int count = 0;
-        if(pred.equals(false)){
-            return 0;
-        }
-        else {
-            for(T a:array){
-                count++;
-            }
-        }
-        return count;
+        final Iterator<T> var = Arrays.stream(array).iterator();
+        return count(var, pred);
     }
 
     public static <T> int count(Iterable<T> iterable, Predicate<T> pred) {
-        int count = 0;
-        if(pred.equals(false)){
-            return 0;
-        }
-        else {
-            for(T a:iterable){
-                count++;
-            }
-        }
-        return count;
+        final Iterator<T> var = iterable.iterator();
+        return count(var, pred);
     }
 
     public static <T> int count(Iterator<T> iterator, Predicate<T> pred) {
-        int count = 0;
-        if(pred.equals(false)){
-            return 0;
-        }
-        else {
-            while(iterator.hasNext()){
-                count++;
-            }
-        }
-        return count;
+        return count(iterator, pred);
     }
     // Method Overloading find
     public static <T> T find(T[] array, T value) {
@@ -187,57 +157,32 @@ public class Algorithm<T> {
     }
     // Method Overloading exists
     public static <T> boolean exists(T[] array, T value) {
-        for(T a:array){
-            if(a.equals(value)){
-                return true;
-            }
-        }
-        return false;
+        final Iterator<T> var = Arrays.stream(array).iterator();
+        return exists(var, value);
     }
 
     public static <T> boolean exists(Iterable<T> iterable, T value) {
-        for(T a:iterable){
-            if(a.equals(value)){
-                return true;
-            }
-        }
-        return false;
+        final Iterator<T> var = iterable.iterator();
+        return exists(var, value);
     }
 
     public static <T> boolean exists(Iterator<T> iterator, T value) {
-        while(iterator.hasNext()){
-            if(iterator.next().equals(value)){
-                return true;
-            }
-        }
-        return false;
+        final Predicate<T> var = value::equals;
+        return exists(iterator, var);
     }
 
     public static <T> boolean exists(T[] array, Predicate<T> pred) {
-        for(T a:array){
-            if(a.equals(pred)){
-                return true;
-            }
-        }
-        return false;
+        final Iterator<T> var = Arrays.stream(array).iterator();
+        return exists(var, pred);
     }
 
     public static <T> boolean exists(Iterable<T> iterable, Predicate<T> pred) {
-        for(T a:iterable){
-            if(a.equals(pred)){
-                return true;
-            }
-        }
-        return false;
+        final Iterator<T> var = iterable.iterator();
+        return exists(var, pred);
     }
 
     public static <T> boolean exists(Iterator<T> iterator, Predicate<T> pred) {
-        while(iterator.hasNext()){
-            if(iterator.next().equals(pred)){
-                return true;
-            }
-        }
-        return false;
+        return exists(iterator, pred);
     }
     // return nilai max
     public static <T> T max(T first, T second) {

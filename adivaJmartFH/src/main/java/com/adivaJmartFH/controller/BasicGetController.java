@@ -1,5 +1,7 @@
 package com.adivaJmartFH.controller;
 
+import com.adivaJmartFH.Account;
+import com.adivaJmartFH.JsonTable;
 import com.adivaJmartFH.Serializable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +13,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/home")
 public interface BasicGetController <T extends Serializable> {
-    /*@GetMapping("/page")
-    @ResponseBody List<T> getPage(int page, int pageSize);
+    @GetMapping("/page")
+    List<T> getPage(int page, int pageSize);
     @GetMapping("/{id}")
-    @ResponseBody T getById(int id);*/
+    T getById(int id);
+
+    JsonTable<T> getJsonTable();
 }

@@ -1,5 +1,9 @@
 package com.adivaJmartFH.controller;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import com.adivaJmartFH.Account;
 import com.adivaJmartFH.JsonTable;
 import com.adivaJmartFH.dbjson.JsonAutowired;
@@ -7,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 @RestController
@@ -20,22 +25,59 @@ public class AccountController implements BasicGetController<Account>
     public static @JsonAutowired
    (value = Account.class, filepath = "C:\\Users\\adiva\\Documents\\randomProductList") JsonTable<Account> accountTable;
 
+    @Override
+    public List<Account> getPage(int page, int pageSize) {
+        return null;
+    }
+
+    @Override
+    public Account getById(int id) {
+        return null;
+    }
+
     public JsonTable<Account> getJsonTable(){
         return accountTable;
     }
 
     @PostMapping("/login")
     public @ResponseBody ResponseEntity <Account> login(String email, String password){
+        try{
+            MessageDigest ms = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = ms.digest(password.getBytes());
+            BigInteger nom = new BigInteger(1, messageDigest);
+
+            String hashtext = nom.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            password = hashtext;
+        } catch(NoSuchAlgorithmException e){
+            throw new RuntimeException(e);
+        }
         if(Pattern.matches(REGEX_EMAIL, email) && Pattern.matches(REGEX_PASSWORD, password)){
             return new ResponseEntity(true, HttpStatus.OK);
         }else{
-            return new ResponseEntity(null, HttpStatus.OK);
+            return new ResponseEntity(null, HttpStatus.FORBIDDEN);
         }
     }
 
-    //@PostMapping("/register")
+    @PostMapping("/register")
+    public @ResponseBody ResponseEntity <Account> register(String name, String email, String password){
+        try{
+            MessageDigest ms = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = ms.digest(password.getBytes());
+            BigInteger nom = new BigInteger(1, messageDigest);
 
-
+            String hashtext = nom.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            password = hashtext;
+        } catch(NoSuchAlgorithmException e){
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 
 
     /*@GetMapping
