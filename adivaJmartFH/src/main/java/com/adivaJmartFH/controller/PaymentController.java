@@ -41,6 +41,9 @@ public class PaymentController implements BasicGetController<Payment>{
 
     @PostMapping("/create")
     boolean create(int buyerId, int productId, int productCount){
+        int cost = 0;
+        String receipt = null;
+        //Payment.getTotalPay(Product);
         return false;
     }
 

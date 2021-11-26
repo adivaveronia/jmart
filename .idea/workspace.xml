@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d7a9248-929a-438e-b650-13255641a42a" name="Changes" comment="Modul 8 - Adiva Veronia - Posttest" />
+    <list default="true" id="1d7a9248-929a-438e-b650-13255641a42a" name="Changes" comment="Modul 8 - Adiva Veronia - Posttest">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/AdivaJmartFhApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/PaymentController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -98,7 +104,10 @@
       <workItem from="1637329873732" duration="5795000" />
       <workItem from="1637368984266" duration="2263000" />
       <workItem from="1637371546038" duration="10419000" />
-      <workItem from="1637580828632" duration="8452000" />
+      <workItem from="1637580828632" duration="8675000" />
+      <workItem from="1637589693038" duration="12000" />
+      <workItem from="1637945801322" duration="1768000" />
+      <workItem from="1637948023971" duration="1429000" />
     </task>
     <task id="LOCAL-00001" summary="Modul 8 - Adiva Veronia - CS">
       <created>1637381641104</created>
@@ -114,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637589346070</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modul 8 - Adiva Veronia - Posttest">
+      <created>1637589568430</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637589568430</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
