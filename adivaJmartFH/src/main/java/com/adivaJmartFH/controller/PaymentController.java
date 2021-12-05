@@ -1,7 +1,7 @@
 package com.adivaJmartFH.controller;
 
 import com.adivaJmartFH.Account;
-import com.adivaJmartFH.JsonTable;
+import com.adivaJmartFH.dbjson.JsonTable;
 import com.adivaJmartFH.ObjectPoolThread;
 import com.adivaJmartFH.Payment;
 import com.adivaJmartFH.dbjson.JsonAutowired;

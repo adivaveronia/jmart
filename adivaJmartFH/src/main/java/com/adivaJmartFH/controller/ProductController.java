@@ -1,6 +1,6 @@
 package com.adivaJmartFH.controller;
 
-import com.adivaJmartFH.JsonTable;
+import com.adivaJmartFH.dbjson.JsonTable;
 import com.adivaJmartFH.Payment;
 import com.adivaJmartFH.Product;
 import com.adivaJmartFH.ProductCategory;

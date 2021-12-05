@@ -22,6 +22,6 @@ public class Product extends Serializable {
     }
 
     public String toString() {
-        return "name" + name + "\n" + "Weight: 1\nconditionedUsed:" + conditionUsed;
+        return "name" + name + "\n" + "Weight:" + weight + "\n" + "conditionedUsed:" + conditionUsed;
     }
 }

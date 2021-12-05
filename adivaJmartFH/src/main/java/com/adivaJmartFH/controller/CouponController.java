@@ -2,7 +2,7 @@ package com.adivaJmartFH.controller;
 
 import com.adivaJmartFH.Account;
 import com.adivaJmartFH.Coupon;
-import com.adivaJmartFH.JsonTable;
+import com.adivaJmartFH.dbjson.JsonTable;
 import com.adivaJmartFH.dbjson.JsonAutowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,16 +30,6 @@ public class CouponController implements BasicGetController<Coupon>{
 
     @GetMapping("/{id}/getAvailable")
     public List<Coupon> getAvailable(){
-        return null;
-    }
-
-    @Override
-    public List<Coupon> getPage(int page, int pageSize) {
-        return null;
-    }
-
-    @Override
-    public Coupon getById(int id) {
         return null;
     }
 

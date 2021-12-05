@@ -18,7 +18,7 @@ public class Store
         this.balance = balance;
     }
     public String toString() {
-        return "name: PT Madju Merdeka\naddress: Jl. Kukusan\nphoneNumber: 628777xxxx";
+        return "name:" + name + "\n" + "address:" + address + "\n" + "phoneNumber: " + phoneNumber;
         
     }
     public boolean validate(){

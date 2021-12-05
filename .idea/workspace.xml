@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1d7a9248-929a-438e-b650-13255641a42a" name="Changes" comment="Modul 8 - Adiva Veronia - Posttest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adivaJmartFH/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/AdivaJmartFhApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Jmart.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Jmart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/BasicGetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/BasicGetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/CouponController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/CouponController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/java/com/adivaJmartFH/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adivaJmartFH/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/adivaJmartFH/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +113,14 @@
       <workItem from="1637580828632" duration="8675000" />
       <workItem from="1637589693038" duration="12000" />
       <workItem from="1637945801322" duration="1768000" />
-      <workItem from="1637948023971" duration="1429000" />
+      <workItem from="1637948023971" duration="1541000" />
+      <workItem from="1637978209897" duration="5533000" />
+      <workItem from="1638187498572" duration="4223000" />
+      <workItem from="1638266471213" duration="219000" />
+      <workItem from="1638539038081" duration="798000" />
+      <workItem from="1638619583194" duration="2192000" />
+      <workItem from="1638632129598" duration="3850000" />
+      <workItem from="1638681584306" duration="17714000" />
     </task>
     <task id="LOCAL-00001" summary="Modul 8 - Adiva Veronia - CS">
       <created>1637381641104</created>
@@ -152,5 +165,15 @@
     <MESSAGE value="Modul 8 - Adiva Veronia - CS" />
     <MESSAGE value="Modul 8 - Adiva Veronia - Posttest" />
     <option name="LAST_COMMIT_MESSAGE" value="Modul 8 - Adiva Veronia - Posttest" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

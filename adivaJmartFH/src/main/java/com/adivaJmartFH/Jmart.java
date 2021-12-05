@@ -26,9 +26,9 @@ public class Jmart {
 
     public static void main(String[] args){
 
-        /*JsonDBEngine.Run(Application.class);
-        SpringApplication.run(Application.class, args);
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));*/
+        JsonDBEngine.Run(Jmart.class);
+        SpringApplication.run(Jmart.class, args);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
     }
 
     public static boolean paymentTimekeeper(Payment payment){
