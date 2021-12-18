@@ -3,14 +3,11 @@ package com.adivaJmartFH;
 import java.util.Date;
 import java.util.ArrayList;
 /**
- * Write a description of class Payment here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Adiva Veronia)
  */
 public class Payment extends Invoice
 {
-    public ArrayList<Record> history = new ArrayList<Record>();
+    public ArrayList<Record> history = new ArrayList<>();
     public int productCount;
     public Shipment shipment;
     
@@ -20,28 +17,22 @@ public class Payment extends Invoice
         this.shipment = shipment;
     }
     
-    /*public boolean validate(){
-        return false;
-    }*/
-    
-    /*public Invoice perform(){
-        return null;
-    }*/
-    
     public double getTotalPay(Product product){
-        return 0;
-    }
-    
-    /*public Object write(){
-        return null;
-    }*/
 
-    public class Record {
+        return (product.price-((product.discount/100)*product.price)*productCount) + shipment.cost;
+    }
+
+    /**
+     * Hasil
+     */
+    public static class Record {
         public Status status;
-        public Date date;
+        public Date date = new java.util.Date();
         public String message;
 
         public Record (Status status, String message){
+            this.status = status;
+            this.message = message;
             this.date = new java.util.Date();
         }
     }

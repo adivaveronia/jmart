@@ -1,5 +1,8 @@
 package com.adivaJmartFH;
 
+/**
+ * @author Adiva Veronia
+ */
 public class ProductRating
 {
     private long total;

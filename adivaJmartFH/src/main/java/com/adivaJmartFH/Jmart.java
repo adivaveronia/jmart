@@ -15,9 +15,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author Adiva Veronia
+ * Main Class
+ */
 @SpringBootApplication
 @RestController
-
 public class Jmart {
     public static long DELIVERED_LIMIT_MS = 0;
     public static long ON_DELIVERED_LIMIT_MS = 1;
@@ -31,69 +34,36 @@ public class Jmart {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
     }
 
+    /**
+     * Digunakan sebagai routine (Function<T, Boolean>) dalam ObjectPoolThread
+     */
     public static boolean paymentTimekeeper(Payment payment){
+
+        long start = System.currentTimeMillis();
+        long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+
+        if (payment.history.equals(Invoice.Status.WAITING_CONFIRMATION) && timeElapsed > WAITING_CONF_LIMIT_MS)
+        {
+            payment.history.add(new Payment.Record(Invoice.Status.FAILED, "FAILED"));
+        }
+        else if(payment.history.equals(Invoice.Status.ON_PROGRESS) && timeElapsed > ON_PROGRESS_LIMIT_MS)
+        {
+            payment.history.add(new Payment.Record(Invoice.Status.FAILED, "FAILED"));
+        }
+        else if(payment.history.equals(Invoice.Status.ON_DELIVERY) && timeElapsed > ON_DELIVERED_LIMIT_MS)
+        {
+            payment.history.add(new Payment.Record(Invoice.Status.ON_DELIVERY, "ON_DELIVERY"));
+            return true;
+        }
+        else if(payment.history.equals(Invoice.Status.FINISHED) && timeElapsed > DELIVERED_LIMIT_MS)
+        {
+            payment.history.add(new Payment.Record(Invoice.Status.FINISHED, "DELIVERED"));
+            return true;
+        }
+
         return false;
     }
-
-    /*public static List<Product> filterByAccountId(List<Product> list, int accountId, int page, int pageSize){
-        return null;
-    }
-
-    public static List<Product> filterByCategory(List<Product> list, ProductCategory category){
-        return null;
-    }
-
-    public static List<Product> filterByName(List<Product> list, String search, int page, int pageSize){
-        return null;
-    }
-    public static List<Product> filterByPrice(List<Product> list, double minPrice, double maxPrice){
-        List<Product> tempList = new ArrayList<>();
-        Iterator<Product> iterator = list.iterator();
-        /*if(minPrice != 0.0){
-            for(Product eachElement: list){
-                if(eachElement.product != minPrice){
-
-                }
-            }
-            list.
-        }*/
-      //  return null;
-    //}
-
-    /*public static void main(String[] args) {
-        try
-        {
-            List<Product> list = read("C:/Users/adiva/Documents/jmart/randomProductList.json");
-            List<Product> filtered = filterByPrice(list, 0.0, 20000.0);
-            filtered.forEach(product -> System.out.println(product.price));
-        }
-        catch (Throwable t)
-        {
-            t.printStackTrace();
-        }
-    }
-
-    private static List<Product> paginate (List<Product> list, int page, int pageSize, Predicate<Product> pred){
-        return null;
-    }
-
-    public static List<Product> read (String filePath){
-        Gson gson = new Gson();
-        List<Product> list = new ArrayList<>();
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(filePath));
-            Product input = gson.fromJson(br, Product.class);
-            String line = br.readLine();
-            while (line != null) {
-                line = br.readLine();
-                //list.add(line);
-            }
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-        return null;
-    }*/
 
 }
     

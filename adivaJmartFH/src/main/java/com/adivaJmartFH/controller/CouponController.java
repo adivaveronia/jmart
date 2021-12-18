@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * @author adiva
+ */
 @RestController
 @RequestMapping("/coupon")
 public class CouponController implements BasicGetController<Coupon>{
     public static @JsonAutowired
-            (value = Coupon.class, filepath = "C:\\Users\\adiva\\Documents\\randomProductList")
+            (value = Coupon.class, filepath = "Coupon.json")
     JsonTable<Coupon> couponTable;
 
     @GetMapping("{id}/isUsed")

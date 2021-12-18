@@ -2,12 +2,10 @@ package com.adivaJmartFH;
 
 import java.util.Date;
 import java.util.ArrayList;
+import com.adivaJmartFH.dbjson.Serializable;
 
 /**
- * Write a description of class Invoice here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Adiva Veronia
  */
 public abstract class Invoice extends Serializable
 {
@@ -34,8 +32,13 @@ public abstract class Invoice extends Serializable
     public Date date;
     public int productId;
     public Rating rating = Rating.NONE;
-    //public Status status = Status.WAITING_CONFIRMATION;
-    
+    public Status status = Status.WAITING_CONFIRMATION;
+
+    /**
+     * Meng-instansiasi variabel instance sesuai parameter dan java.util.date
+     * @param buyerId id dari pembeli
+     * @param productId id dari produk
+     */
     protected Invoice(int buyerId, int productId){
         this.buyerId = buyerId;
         this.productId = productId;

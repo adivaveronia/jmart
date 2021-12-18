@@ -1,18 +1,15 @@
 package com.adivaJmartFH;
 
+import com.adivaJmartFH.dbjson.Serializable;
 /**
- * Write a description of class Coupon here.
- *
  * @author (Adiva veronia)
  * @version (20/09/2021)
  */
 public class Coupon extends Serializable {
-    public static enum Type
-    {
+    public static enum Type {
         DISCOUNT,
         REBATE
     }
-    // instance variables - replace the example below with your own
     public String name;
     public int code;
     public double cut;
@@ -35,9 +32,8 @@ public class Coupon extends Serializable {
     public boolean isUsed() {
         return used; 
     }
-    
-    // itu nama kelas PriceTag nya otomatis ke ubah jadi Pricetag gak tau kenapa
-    public boolean canApply(PriceTag priceTag) {
+
+    public boolean canApply(Treasury priceTag) {
         
         if (priceTag.getAdjustedPrice(minimum, cut) >= minimum && !used) {
             return true;
@@ -47,7 +43,7 @@ public class Coupon extends Serializable {
         }
     }
     
-    public double apply(PriceTag priceTag) {
+    public double apply(Treasury priceTag) {
         used = true;
         return (double)priceTag.getAdjustedPrice(minimum, cut) - cut;
         

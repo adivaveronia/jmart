@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * Class algoritma untuk fungsi overloading collect, count, find, paginate, min,
+ * max, exists, dan paginate
+ * @author Adiva Veronia
+ */
 public class Algorithm<T> {
     private Algorithm() {
     }
@@ -72,7 +77,11 @@ public class Algorithm<T> {
         return list;
     }
 
-    // Method Overloading count
+    /** Method Overloading count
+     * @return hasil perhitungan setelah data telah di iterasi
+     * Apabila predicate mengembalikan logika true, ini merupakan sinyal untuk method
+     * count melakukan increment terhadap variabel yang bertindak sebagai counter
+     */
     public static <T> int count(T[] array, T value) {
         final Iterator<T> var = Arrays.stream(array).iterator();
         return count(var, value);
@@ -101,11 +110,18 @@ public class Algorithm<T> {
     public static <T> int count(Iterator<T> iterator, Predicate<T> pred) {
         return count(iterator, pred);
     }
-    // Method Overloading find
+
+    /** Method Overloading find
+     * @return objek sesuai yang dideskripsikan predicate/value, jika tidak ditemukan return null
+     * Apabila predicate mengembalikan logika true, ini merupakan sinyal kepada method
+     * bahwa objek yang dimaksud ditemukan.
+     */
     public static <T> T find(T[] array, T value) {
         for (T a:array){
             if(a.equals(value)){
                 return a;
+            }else{
+                return null;
             }
         }
         return null;
@@ -155,7 +171,11 @@ public class Algorithm<T> {
         }
         return null;
     }
-    // Method Overloading exists
+
+    /** Method Overloading exists
+     * Memberi informasi apakah objek terdapat dalam sebuah list/ array
+     * @return true jika ditemukan, false jika tidak
+     */
     public static <T> boolean exists(T[] array, T value) {
         final Iterator<T> var = Arrays.stream(array).iterator();
         return exists(var, value);
@@ -171,6 +191,7 @@ public class Algorithm<T> {
         return exists(iterator, var);
     }
 
+    // jika predicate mengembalikan true, ini berarti sinyal bahwa objek ditemukan
     public static <T> boolean exists(T[] array, Predicate<T> pred) {
         final Iterator<T> var = Arrays.stream(array).iterator();
         return exists(var, pred);
@@ -184,7 +205,10 @@ public class Algorithm<T> {
     public static <T> boolean exists(Iterator<T> iterator, Predicate<T> pred) {
         return exists(iterator, pred);
     }
-    // return nilai max
+
+    /**
+     * @return objek yang paling besar antara objek
+     */
     public static <T> T max(T first, T second) {
         if(first.hashCode() > second.hashCode()){
             return first;
@@ -220,7 +244,10 @@ public class Algorithm<T> {
     public static <T> T max(Iterator<T> iterator, Comparator<? super T> comparator){
         return max(iterator, comparator);
     }
-    // return nilai min
+
+    /**
+     * @return objek paling kecil antara objek
+     */
     public static <T> T min(T first, T second) {
         if(first.hashCode() < second.hashCode()){
             return first;
@@ -261,6 +288,9 @@ public class Algorithm<T> {
         return Arrays.stream(array).filter(pred::equals).skip(pageSize*page).limit(pageSize).collect(Collectors.toList());
     }
 
+    /**
+     * Membatasi hasil output dari sebuah proses filter
+     */
     public static <T>List<T> paginate (Iterable<T> iterable, int page, int pageSize, Predicate<T> pred){
         List<T> list = new ArrayList<T>();
         int counter = 0, counterPrint = 0;
