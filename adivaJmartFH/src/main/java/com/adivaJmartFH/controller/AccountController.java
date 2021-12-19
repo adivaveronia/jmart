@@ -152,20 +152,4 @@ public class AccountController implements BasicGetController<Account>
     }
 }
 
-    /*@GetMapping
-    String index() { return "account page"; }
-
-    @PostMapping("/register")
-    Account register
-            (
-                    @RequestParam String name,
-                    @RequestParam String email,
-                    @RequestParam String password
-            )
-    {
-        return new Account(name, email, password, 0);
-    }
-
-    @GetMapping("/{id}")
-    String getById(@PathVariable int id) { return "account id " + id + " not found!"; }*/
 
