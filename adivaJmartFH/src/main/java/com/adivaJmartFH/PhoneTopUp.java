@@ -18,6 +18,9 @@ public class PhoneTopUp extends Invoice{
         this.phoneNumber = phoneNumber;
     }
 
+    /**
+     * Total biaya dari produk
+     */
     @Override
     public double getTotalPay(Product product) {
 

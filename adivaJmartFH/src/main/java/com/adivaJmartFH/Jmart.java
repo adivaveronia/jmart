@@ -27,6 +27,9 @@ public class Jmart {
     public static long ON_PROGRESS_LIMIT_MS = 2;
     public static long WAITING_CONF_LIMIT_MS = 3;
 
+    /**
+     * Menjalankan spring application
+     */
     public static void main(String[] args){
 
         JsonDBEngine.Run(Jmart.class);
@@ -35,7 +38,19 @@ public class Jmart {
     }
 
     /**
+     * Mencatat waktu berlalui (elapsed) dari record terbaru terhadap waktu saat ini
+     * dalam satuan milidetik.
+     * Record yang memiliki status FINISIHED dan FAILED sudah selesai diproses
+     * Update berarti menambahkan Record caru ke dalam history
      * Digunakan sebagai routine (Function<T, Boolean>) dalam ObjectPoolThread
+     * Apabila record terbarunya merupakan WAITING_CONFIRMATION dan waktu berlalu sudah melebihi
+     * WAITING_CONF_LIMIT_MS, maka update history dari Payment tersebut dengan Invoice.Status.FAILED.
+     * Apabila record terbarunya merupakan ON_PROGRESS dan waktu berlalu sudah melebihi
+     * ON_PROGRESS_LIMIT_MS, maka update history dari Payment tersebut dengan Invoice.Status.FAILED.
+     * Apabila record terbarunya merupakan ON_DELIVERY dan waktu berlalu sudah melebihi ON_DELIVERY_LIMIT_MS,
+     * maka update history dari Payment tersebut dengan Invoice.Status.DELIVERED.
+     * Apabila record terbarunya merupakan DELIVERED dan waktu berlalu sudah melebihi
+     * DELIVERED_LIMIT_MS, maka update history dari Payment tersebut dengan Invoice.Status.FINISHED.
      */
     public static boolean paymentTimekeeper(Payment payment){
 

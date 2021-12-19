@@ -35,6 +35,7 @@ public class AccountController implements BasicGetController<Account>
     public static JsonTable<Account> accountTable;
 
     /**
+     * Menambah file untuk Account.json
      * @return instance variabel AccountTable
      */
     @Override

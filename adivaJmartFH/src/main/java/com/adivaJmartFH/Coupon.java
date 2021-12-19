@@ -29,6 +29,9 @@ public class Coupon extends Serializable {
         this.used = false; 
     }
 
+    /**
+     * @return kondisi telah digunakan atau tidak
+     */
     public boolean isUsed() {
         return used; 
     }

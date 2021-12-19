@@ -9,6 +9,9 @@ public class Treasury
     public static final double BOTTOM_PRICE = 20000.0;
     public static final double BOTTOM_FEE = 1000.0;
 
+    /**
+     * @return harga yang telah diubah
+     */
     public double getAdjustedPrice(double price, double discount) {
         return getDiscountPrice(price, discount) + getAdminFee(price, discount);
     }
@@ -21,7 +24,10 @@ public class Treasury
             return getDiscountPrice(price, discount) * Treasury.COMISSION_MULTIPLIER;
         }
     }
-    
+
+    /**
+     * @return harga setelah diskon
+     */
     private double getDiscountPrice (double price, double discount) {
         if (discount >= 100.0) {
             return price = 0.0;
